@@ -1,0 +1,55 @@
+{
+  "name": "conformal-js",
+  "version": "0.1.0",
+  "description": "Distribution-free uncertainty quantification for JavaScript. Split conformal prediction, Adaptive Conformal Inference (ACI), Welford online statistics, and KS drift detection. Zero dependencies.",
+  "type": "module",
+  "main": "src/conformal.js",
+  "module": "src/conformal.js",
+  "types": "src/conformal.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/conformal.js",
+      "types": "./src/conformal.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage test/*.test.js",
+    "bench": "node bench/bench.js",
+    "lint": "npx tsc --noEmit --allowJs --checkJs --moduleResolution node16 --module nodenext --target es2020 src/conformal.js"
+  },
+  "keywords": [
+    "conformal-prediction",
+    "uncertainty-quantification",
+    "machine-learning",
+    "adaptive-conformal-inference",
+    "prediction-sets",
+    "prediction-intervals",
+    "distribution-free",
+    "coverage-guarantee",
+    "online-learning",
+    "welford",
+    "kolmogorov-smirnov",
+    "drift-detection",
+    "calibration",
+    "aci",
+    "statistics"
+  ],
+  "author": "Ayrton Ramos",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayrtonramos/conformal-js"
+  },
+  "files": [
+    "src/conformal.js",
+    "src/conformal.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {}
+}
