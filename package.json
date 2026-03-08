@@ -16,7 +16,8 @@
     "test": "node --test test/*.test.js",
     "test:coverage": "node --test --experimental-test-coverage test/*.test.js",
     "bench": "node bench/bench.js",
-    "lint": "npx tsc --noEmit --allowJs --checkJs --moduleResolution node16 --module nodenext --target es2020 src/conformal.js"
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit --allowJs --checkJs --moduleResolution node16 --module nodenext --target es2020 src/conformal.js"
   },
   "keywords": [
     "conformal-prediction",
@@ -48,5 +49,9 @@
     "node": ">=18.0.0"
   },
   "sideEffects": false,
-  "devDependencies": {}
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.4.0"
+  }
 }
