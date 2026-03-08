@@ -36,11 +36,8 @@
     "statistics"
   ],
   "author": "Ayrton Ramos",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ayrtonramos/conformal-js"
-  },
+  "license": "UNLICENSED",
+  "private": true,
   "files": [
     "src/conformal.js",
     "src/conformal.d.ts",
