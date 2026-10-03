@@ -1,0 +1,65 @@
+{
+  "name": "conformal-js",
+  "version": "0.2.0",
+  "description": "Distribution-free uncertainty quantification for JavaScript and TypeScript. Zero runtime dependencies.",
+  "type": "module",
+  "main": "src/conformal.js",
+  "module": "src/conformal.js",
+  "types": "src/conformal.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/conformal.d.ts",
+      "import": "./src/conformal.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "bench": "node bench/bench.js",
+    "example": "node examples/delivery-time.mjs",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "npm run typecheck:source && npm run typecheck:consumer && npm run typecheck:declarations && npm run typecheck:verify",
+    "prepublishOnly": "npm test && npm run lint && npm run typecheck:source && npm run typecheck:consumer && npm run typecheck:declarations && npm run typecheck:verify",
+    "typecheck:source": "tsc -p tsconfig.source.json",
+    "typecheck:consumer": "tsc -p tsconfig.json",
+    "typecheck:verify": "node scripts/verify-typecheck.mjs",
+    "typecheck:declarations": "node scripts/verify-declarations.mjs"
+  },
+  "keywords": [
+    "conformal-prediction",
+    "uncertainty-quantification",
+    "javascript",
+    "typescript",
+    "prediction-intervals",
+    "calibration",
+    "statistics"
+  ],
+  "author": "Ayrton Ramos Goodman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuraquanTech/conformal-js.git"
+  },
+  "homepage": "https://github.com/AuraquanTech/conformal-js#readme",
+  "bugs": {
+    "url": "https://github.com/AuraquanTech/conformal-js/issues"
+  },
+  "files": [
+    "src/conformal.js",
+    "src/conformal.d.ts",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs/API.md",
+    "docs/MATHEMATICS.md"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.4.0"
+  }
+}
